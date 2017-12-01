@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<h2>Please enter test cases and code to be tested: </h2>
+<form id="codeForm" (ngSubmit)="onSubmit()" #codeForm="ngForm">
+  <div class="form-group">
+    <label for="testCases">Test Cases</label>
+    <br>
+    <input type="text" class="form-control" name="testCases" id="testCases" [(ngModel)]="testCases" required>
+  </div>
+  <div class="form-group">
+    <label for="codeBody">Code</label>
+    <br>
+    <textarea rows="20" cols="50" name="codeBody" id="codeBody" form="codeForm" [(ngModel)]="snippet" required>
+      Enter text here...</textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+  <dt>Statement Coverage:</dt>
+  <dd>{{statementCoverage}}</dd>
+</form>
